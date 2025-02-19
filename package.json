@@ -1,0 +1,19 @@
+{
+  "name": "nerd-bot",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {},
+  "keywords": [
+    "discord",
+    "bot",
+    "nerd",
+    "nerdcamp"
+  ],
+  "author": "Viktor Popp",
+  "license": "Apache-2.0",
+  "description": "A small Discord bot made to manage the \"NerdCamp\" Discord server.",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7"
+  }
+}
