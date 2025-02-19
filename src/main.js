@@ -10,9 +10,9 @@ const client = new Client({
   ],
 });
 
-client.on('messageCreate', (c) => {
-  if (c.content === 'ping') {
-    c.reply('pong');
+client.on('messageCreate', (msg) => {
+  if (msg.content === 'ping') {
+    msg.reply('pong');
   }
 });
 
