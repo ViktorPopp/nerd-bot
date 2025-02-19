@@ -11,19 +11,17 @@ const commands = [
 const rest = new REST({ version: "10" }).setToken(
   process.env.DISCORD_BOT_TOKEN,
 );
+
 (async () => {
   try {
     console.log("Started refreshing application (/) commands.");
 
     await rest.put(
-      Routes.applicationGuildCommands(
-        process.env.CLIENT_ID,
-        process.env.NERDBOT_GUILD_ID,
-      ),
+      Routes.applicationCommands(process.env.CLIENT_ID),
       { body: commands },
     );
 
-    console.log("Successfully reloaded application (/) commands.");
+    console.log("Successfully reloaded application (/) commands globally.");
   } catch (error) {
     console.error(error);
   }
