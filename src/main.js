@@ -10,8 +10,15 @@ const client = new Client({
   ],
 });
 
-client.on('ready', (c) => {
-  console.log(`Logged in as ${client.user.tag}!`);
+client.on('messageCreate', (c) => {
+  if (c.content === 'ping') {
+    c.reply('pong');
+  }
+});
+
+
+client.on('ready', () => {
+  console.log(`✅ Logged in as ${client.user.tag}!`);
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
