@@ -1,5 +1,5 @@
-const { Client, IntentsBitField } = require('discord.js');
-require('dotenv').config();
+const { Client, IntentsBitField } = require("discord.js");
+require("dotenv").config();
 
 const client = new Client({
   intents: [
@@ -10,15 +10,28 @@ const client = new Client({
   ],
 });
 
-client.on('messageCreate', (msg) => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
+client.on("ready", () => {
+  console.log(`✅ Logged in as ${client.user.tag}!`);
 });
 
+client.on("error", (error) => {
+  console.error("❌ An error occurred:", error);
+});
 
-client.on('ready', () => {
-  console.log(`✅ Logged in as ${client.user.tag}!`);
+client.on("warn", (info) => {
+  console.warn("⚠️ Warning:", info);
+});
+
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isCommand()) return;
+
+  const { commandName } = interaction;
+
+  if (commandName === "ping") {
+    await interaction.reply("Pong!");
+  } else {
+    await interaction.reply("Unknown command");
+  }
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);

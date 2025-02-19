@@ -2,7 +2,10 @@
   "name": "nerd-bot",
   "version": "1.0.0",
   "main": "src/main.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon src/main.js",
+    "setup": "node src/register_commands.js"
+  },
   "keywords": [
     "discord",
     "bot",
