@@ -10,7 +10,7 @@
     "nerdcamp"
   ],
   "author": "Viktor Popp",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "description": "A small Discord bot made to manage the \"NerdCamp\" Discord server.",
   "dependencies": {
     "discord.js": "^14.18.0",
